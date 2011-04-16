@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: MS Trebuchet, Verdana, Arial, Helvetica;
+	font-size: 10pt;
+}
+
+ul {
+	padding-left: 14px;
+}

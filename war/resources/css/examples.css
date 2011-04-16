@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+.gwt-PagedTable {
+	border: 1px solid #c0c0c0;
+}
+
+.gwt-PagedTable td {
+	padding: 4px;
+	margin: 0;
+}
+
+.gwt-PagedTableHeader {
+	background: #f0f0f0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e0e0e0');
+	background: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#e0e0e0));
+	background: -moz-linear-gradient(top,  #f0f0f0,  #e0e0e0);
+}
+
+/*
+.gwt-PagedTableHeader td {
+	border: 1px solid #c0c0c0;
+}
+*/

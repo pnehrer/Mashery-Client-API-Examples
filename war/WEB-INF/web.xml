@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://java.sun.com/xml/ns/javaee"
+		xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>LoginService</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.LoginServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>IPInfoService</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.quova.IPInfoServiceImpl</servlet-class>
+		<init-param>
+			<param-name>quova.endpoint</param-name>
+			<param-value>http://api.quova.com/v1/ipinfo/</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>quova.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param>
+		<init-param>
+			<param-name>quova.secret</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>SearchService</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.active.SearchServiceImpl</servlet-class>
+		<init-param>
+			<param-name>active.endpoint</param-name>
+			<param-value>http://api.amp.active.com/search</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>active.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>HotelDealsServlet</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.hotwire.HotelDealsServlet</servlet-class>
+		<init-param>
+			<param-name>hotwire.endpoint</param-name>
+			<param-value>http://api.hotwire.com/v1/deal/hotel</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>hotwire.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>EtsyService</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.etsy.EtsyServiceImpl</servlet-class>
+		<init-param>
+			<param-name>etsy.service</param-name>
+			<param-value>etsy</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.endpoint</param-name>
+			<param-value>http://openapi.etsy.com/v2/private</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>etsy.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.secret</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>ForecastService</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.weatherbug.ForecastServiceImpl</servlet-class>
+		<init-param>
+			<param-name>weatherbug.endpoint</param-name>
+			<param-value>http://i.wxbug.net/REST/SP/getForecastRSS.aspx</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>weatherbug.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>OAuthRequestTokenServlet</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.etsy.OAuthRequestTokenServlet</servlet-class>
+		<init-param>
+			<param-name>etsy.endpoint</param-name>
+			<param-value>http://openapi.etsy.com/v2/oauth/request_token</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.loginURL</param-name>
+			<param-value>https://www.etsy.com/oauth/signin</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>etsy.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.secret</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet>
+		<servlet-name>OAuthAccessTokenServlet</servlet-name>
+		<servlet-class>com.mashery.examples.api.server.etsy.OAuthAccessTokenServlet</servlet-class>
+		<init-param>
+			<param-name>etsy.service</param-name>
+			<param-value>etsy</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.endpoint</param-name>
+			<param-value>http://openapi.etsy.com/v2/oauth/access_token</param-value>
+		</init-param>
+		<!-- init-param>
+			<param-name>etsy.apikey</param-name>
+			<param-value>?????</param-value>
+		</init-param>
+		<init-param>
+			<param-name>etsy.secret</param-name>
+			<param-value>?????</param-value>
+		</init-param -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginService</servlet-name>
+		<url-pattern>/examples/loginsvc</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/examples/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IPInfoService</servlet-name>
+		<url-pattern>/examples/quova/ipinfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SearchService</servlet-name>
+		<url-pattern>/examples/active/search</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HotelDealsServlet</servlet-name>
+		<url-pattern>/examples/hotwire/hoteldeals</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EtsyService</servlet-name>
+		<url-pattern>/examples/etsy/etsy</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ForecastService</servlet-name>
+		<url-pattern>/examples/weatherbug/forecast</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OAuthRequestTokenServlet</servlet-name>
+		<url-pattern>/examples/etsy/oauth/request_token</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OAuthAccessTokenServlet</servlet-name>
+		<url-pattern>/examples/etsy/oauth/access_token</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
